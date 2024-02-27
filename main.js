@@ -32,6 +32,7 @@ while (contador < buttons.length) {
       currentPlayer = "X";
       statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
     }
+    botao.disabled = true;
   });
   contador = contador + 1;
 }
