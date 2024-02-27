@@ -23,7 +23,6 @@ while (contador < buttons.length) {
   const botao = document.getElementById(buttons[contador]);
   botao.addEventListener("click", function () {
     botao.disabled = true;
-    statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
     console.log(buttons[contador]);
     if (currentPlayer === "X") {
       botao.innerText = "X";
@@ -32,6 +31,7 @@ while (contador < buttons.length) {
       botao.innerText = "O";
       currentPlayer = "X";
     }
+    statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
   });
   contador = contador + 1;
 }
