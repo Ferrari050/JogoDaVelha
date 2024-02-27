@@ -22,17 +22,16 @@ const buttons = ["11", "12", "13", "21", "22", "23", "31", "32", "33"];
 while (contador < buttons.length) {
   const botao = document.getElementById(buttons[contador]);
   botao.addEventListener("click", function () {
+    botao.disabled = true;
+    statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
     console.log(buttons[contador]);
     if (currentPlayer === "X") {
       botao.innerText = "X";
       currentPlayer = "O";
-      statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
     } else {
       botao.innerText = "O";
       currentPlayer = "X";
-      statusDisplay.innerHTML = `É a vez do jogador ${currentPlayer}`;
     }
-    botao.disabled = true;
   });
   contador = contador + 1;
 }
