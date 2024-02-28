@@ -1,7 +1,7 @@
 const cells = document.querySelectorAll("[cell]");
 const statusDisplay = document.getElementById("status");
 let currentPlayer = "X";
-
+let jogadas = 0;
 let contador = 0;
 
 const buttons = ["11", "12", "13", "21", "22", "23", "31", "32", "33"];
@@ -156,6 +156,9 @@ while (contador < buttons.length) {
   const botao = document.getElementById(buttons[contador]);
 
   botao.addEventListener("click", function () {
+    jogadas++;
+
+    console.log(jogadas);
     botao.disabled = true;
     if (currentPlayer === "X") {
       botao.innerText = "X";
@@ -168,6 +171,10 @@ while (contador < buttons.length) {
       statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
       checkWinner();
     }
+    if (jogadas === 9) {
+      statusDisplay.innerHTML = "Deu Velha!";
+    }
   });
-  contador = contador + 1;
+
+  contador++;
 }
