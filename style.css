@@ -63,24 +63,24 @@ button:disabled {
   background-color: #09346900;
 }
 
-.botao11,
-.botao21,
-.botao31 {
+.button11,
+.button21,
+.button31 {
   border-right: 1px solid white;
 }
 
-.botao31,
-.botao21,
-.botao22,
-.botao32,
-.botao23,
-.botao33 {
+.button31,
+.button21,
+.button22,
+.button32,
+.button23,
+.button33 {
   border-top: 1px solid white;
 }
 
-.botao13,
-.botao23,
-.botao33 {
+.button13,
+.button23,
+.button33 {
   border-left: 1px solid white;
 }
 
@@ -91,7 +91,7 @@ button:disabled {
   border-radius: 100%;
 }
 
-.assinatura{
+.signature{
   font-family: "Anta", sans-serif;
   text-decoration: none;
   color: white;
@@ -105,7 +105,7 @@ button:disabled {
   flex-direction: row;
 }
 
-.meu-nome{
+.myName{
   width: 90px;
   padding-left: 5px;
 }

@@ -1,22 +1,24 @@
 const cells = document.querySelectorAll("[cell]");
 const statusDisplay = document.getElementById("status");
 let currentPlayer = "X";
-let jogadas = 0;
-let contador = 0;
+let plays = 0;
+let amountGridButtons = 0;
 
 const buttons = ["11", "12", "13", "21", "22", "23", "31", "32", "33"];
 
-const botao11 = document.getElementById(buttons[0]);
-const botao12 = document.getElementById(buttons[1]);
-const botao13 = document.getElementById(buttons[2]);
-const botao21 = document.getElementById(buttons[3]);
-const botao22 = document.getElementById(buttons[4]);
-const botao23 = document.getElementById(buttons[5]);
-const botao31 = document.getElementById(buttons[6]);
-const botao32 = document.getElementById(buttons[7]);
-const botao33 = document.getElementById(buttons[8]);
+const [
+  button11,
+  button12,
+  button13,
+  button21,
+  button22,
+  button23,
+  button31,
+  button32,
+  button33,
+] = document.querySelectorAll(".cell");
 
-function desativaBotoes() {
+function disableButtons() {
   statusDisplay.innerText = " ";
   for (let i = 0; i < buttons.length; i++) {
     botaoDesativado = document.getElementById(buttons[i]);
@@ -26,123 +28,123 @@ function desativaBotoes() {
 
 function checkWinner() {
   if (
-    (botao11.textContent.includes("X") &&
-      botao12.textContent.includes("X") &&
-      botao13.textContent.includes("X")) ||
-    (botao11.textContent.includes("O") &&
-      botao12.textContent.includes("O") &&
-      botao13.textContent.includes("O"))
+    (button11.textContent.includes("X") &&
+      button12.textContent.includes("X") &&
+      button13.textContent.includes("X")) ||
+    (button11.textContent.includes("O") &&
+      button12.textContent.includes("O") &&
+      button13.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao11.textContent.includes("X") &&
-      botao22.textContent.includes("X") &&
-      botao33.textContent.includes("X")) ||
-    (botao11.textContent.includes("O") &&
-      botao22.textContent.includes("O") &&
-      botao33.textContent.includes("O"))
+    (button11.textContent.includes("X") &&
+      button22.textContent.includes("X") &&
+      button33.textContent.includes("X")) ||
+    (button11.textContent.includes("O") &&
+      button22.textContent.includes("O") &&
+      button33.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao21.textContent.includes("X") &&
-      botao22.textContent.includes("X") &&
-      botao23.textContent.includes("X")) ||
-    (botao21.textContent.includes("O") &&
-      botao22.textContent.includes("O") &&
-      botao23.textContent.includes("O"))
+    (button21.textContent.includes("X") &&
+      button22.textContent.includes("X") &&
+      button23.textContent.includes("X")) ||
+    (button21.textContent.includes("O") &&
+     button22.textContent.includes("O") &&
+      button23.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao31.textContent.includes("X") &&
-      botao32.textContent.includes("X") &&
-      botao33.textContent.includes("X")) ||
-    (botao31.textContent.includes("O") &&
-      botao32.textContent.includes("O") &&
-      botao33.textContent.includes("O"))
+    (button31.textContent.includes("X") &&
+      button32.textContent.includes("X") &&
+      button33.textContent.includes("X")) ||
+    (button31.textContent.includes("O") &&
+      button32.textContent.includes("O") &&
+      button33.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao13.textContent.includes("X") &&
-      botao22.textContent.includes("X") &&
-      botao31.textContent.includes("X")) ||
-    (botao13.textContent.includes("O") &&
-      botao22.textContent.includes("O") &&
-      botao31.textContent.includes("O"))
+    (button13.textContent.includes("X") &&
+      button22.textContent.includes("X") &&
+      button31.textContent.includes("X")) ||
+    (button13.textContent.includes("O") &&
+      button22.textContent.includes("O") &&
+      button31.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao11.textContent.includes("X") &&
-      botao21.textContent.includes("X") &&
-      botao31.textContent.includes("X")) ||
-    (botao11.textContent.includes("O") &&
-      botao21.textContent.includes("O") &&
-      botao31.textContent.includes("O"))
+    (button11.textContent.includes("X") &&
+      button21.textContent.includes("X") &&
+      button31.textContent.includes("X")) ||
+    (button11.textContent.includes("O") &&
+      button21.textContent.includes("O") &&
+      button31.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao12.textContent.includes("X") &&
-      botao22.textContent.includes("X") &&
-      botao32.textContent.includes("X")) ||
-    (botao12.textContent.includes("O") &&
-      botao22.textContent.includes("O") &&
-      botao32.textContent.includes("O"))
+    (button12.textContent.includes("X") &&
+      button22.textContent.includes("X") &&
+      button32.textContent.includes("X")) ||
+    (button12.textContent.includes("O") &&
+      button22.textContent.includes("O") &&
+      button32.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
-    (botao13.textContent.includes("X") &&
-      botao23.textContent.includes("X") &&
-      botao33.textContent.includes("X")) ||
-    (botao13.textContent.includes("O") &&
-      botao23.textContent.includes("O") &&
-      botao33.textContent.includes("O"))
+    (button13.textContent.includes("X") &&
+      button23.textContent.includes("X") &&
+      button33.textContent.includes("X")) ||
+    (button13.textContent.includes("O") &&
+      button23.textContent.includes("O") &&
+      button33.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
-      desativaBotoes();
+      disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   }
@@ -152,29 +154,25 @@ function reset() {
   location.reload();
 }
 
-while (contador < buttons.length) {
-  const botao = document.getElementById(buttons[contador]);
-
-  botao.addEventListener("click", function () {
-    jogadas++;
-
-    console.log(jogadas);
-    botao.disabled = true;
+while (amountGridButtons < buttons.length) {
+  const someButton = document.getElementById(buttons[amountGridButtons]);
+  someButton.addEventListener("click", function () {
+    plays++;
+    someButton.disabled = true;
     if (currentPlayer === "X") {
-      botao.innerText = "X";
+      someButton.innerText = "X";
       currentPlayer = "O";
       statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
       checkWinner();
     } else {
-      botao.innerText = "O";
+      someButton.innerText = "O";
       currentPlayer = "X";
       statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
       checkWinner();
     }
-    if (jogadas === 9) {
+    if (plays === 9) {
       statusDisplay.innerHTML = "Deu Velha!";
     }
   });
-
-  contador++;
+  amountGridButtons++;
 }
