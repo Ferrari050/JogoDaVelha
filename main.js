@@ -150,6 +150,8 @@ function checkWinner() {
   } else {
     if (plays === 9) {
       statusDisplay.innerHTML = "Deu Velha!";
+      const titleOldLady = document.getElementById('oldLadyId');
+      titleOldLady.classList.add('redOldLady');
     }
   }
 }
