@@ -62,7 +62,7 @@ function checkWinner() {
       button22.textContent.includes("X") &&
       button23.textContent.includes("X")) ||
     (button21.textContent.includes("O") &&
-     button22.textContent.includes("O") &&
+      button22.textContent.includes("O") &&
       button23.textContent.includes("O"))
   ) {
     if (currentPlayer === "X") {
@@ -147,6 +147,10 @@ function checkWinner() {
       disableButtons();
       statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
+  } else {
+    if (plays === 9) {
+      statusDisplay.innerHTML = "Deu Velha!";
+    }
   }
 }
 
@@ -169,9 +173,6 @@ while (amountGridButtons < buttons.length) {
       currentPlayer = "X";
       statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
       checkWinner();
-    }
-    if (plays === 9) {
-      statusDisplay.innerHTML = "Deu Velha!";
     }
   });
   amountGridButtons++;
