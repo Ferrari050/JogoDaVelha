@@ -35,8 +35,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao11.textContent.includes("X") &&
@@ -48,8 +50,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao21.textContent.includes("X") &&
@@ -61,8 +65,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao31.textContent.includes("X") &&
@@ -74,8 +80,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao13.textContent.includes("X") &&
@@ -87,8 +95,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao11.textContent.includes("X") &&
@@ -100,8 +110,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao12.textContent.includes("X") &&
@@ -113,8 +125,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   } else if (
     (botao13.textContent.includes("X") &&
@@ -126,8 +140,10 @@ function checkWinner() {
   ) {
     if (currentPlayer === "X") {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador O Ganhou o jogo!";
     } else {
       desativaBotoes();
+      statusDisplay.innerText = "O jogador X Ganhou o jogo!";
     }
   }
 }
@@ -152,7 +168,6 @@ while (contador < buttons.length) {
       statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
       checkWinner();
     }
-    
   });
   contador = contador + 1;
 }
