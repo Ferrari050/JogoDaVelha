@@ -83,3 +83,29 @@ button:disabled {
 .botao33 {
   border-left: 1px solid white;
 }
+
+.linkedin-icon{
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+  border-radius: 100%;
+}
+
+.assinatura{
+  font-family: "Anta", sans-serif;
+  text-decoration: none;
+  color: white;
+  }
+
+.containerLinkedinSimbol{
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.meu-nome{
+  width: 90px;
+  padding-left: 5px;
+}
