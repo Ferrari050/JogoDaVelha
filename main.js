@@ -2,19 +2,6 @@ const cells = document.querySelectorAll("[cell]");
 const statusDisplay = document.getElementById("status");
 let currentPlayer = "X";
 
-let gameState = ["", "", "", "", "", "", "", "", ""];
-
-const winningConditions = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6],
-];
-
 let contador = 0;
 
 const buttons = ["11", "12", "13", "21", "22", "23", "31", "32", "33"];
@@ -29,39 +16,143 @@ const botao31 = document.getElementById(buttons[6]);
 const botao32 = document.getElementById(buttons[7]);
 const botao33 = document.getElementById(buttons[8]);
 
-function checkX() {
-  if (
-    botao11.textContent.includes("X") &&
-    botao12.textContent.includes("X") &&
-    botao13.textContent.includes("X")
-  ) {
-    alert("o jogo acabou.");
+function desativaBotoes() {
+  statusDisplay.innerText = " ";
+  for (let i = 0; i < buttons.length; i++) {
+    botaoDesativado = document.getElementById(buttons[i]);
+    botaoDesativado.disabled = true;
   }
 }
 
-function checkO() {
+function checkWinner() {
   if (
-    botao11.textContent.includes("O") &&
-    botao12.textContent.includes("O") &&
-    botao13.textContent.includes("O")
+    (botao11.textContent.includes("X") &&
+      botao12.textContent.includes("X") &&
+      botao13.textContent.includes("X")) ||
+    (botao11.textContent.includes("O") &&
+      botao12.textContent.includes("O") &&
+      botao13.textContent.includes("O"))
   ) {
-    alert("o jogo acabou. O é o vencedor");
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao11.textContent.includes("X") &&
+      botao22.textContent.includes("X") &&
+      botao33.textContent.includes("X")) ||
+    (botao11.textContent.includes("O") &&
+      botao22.textContent.includes("O") &&
+      botao33.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao21.textContent.includes("X") &&
+      botao22.textContent.includes("X") &&
+      botao23.textContent.includes("X")) ||
+    (botao21.textContent.includes("O") &&
+      botao22.textContent.includes("O") &&
+      botao23.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao31.textContent.includes("X") &&
+      botao32.textContent.includes("X") &&
+      botao33.textContent.includes("X")) ||
+    (botao31.textContent.includes("O") &&
+      botao32.textContent.includes("O") &&
+      botao33.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao13.textContent.includes("X") &&
+      botao22.textContent.includes("X") &&
+      botao31.textContent.includes("X")) ||
+    (botao13.textContent.includes("O") &&
+      botao22.textContent.includes("O") &&
+      botao31.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao11.textContent.includes("X") &&
+      botao21.textContent.includes("X") &&
+      botao31.textContent.includes("X")) ||
+    (botao11.textContent.includes("O") &&
+      botao21.textContent.includes("O") &&
+      botao31.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao12.textContent.includes("X") &&
+      botao22.textContent.includes("X") &&
+      botao32.textContent.includes("X")) ||
+    (botao12.textContent.includes("O") &&
+      botao22.textContent.includes("O") &&
+      botao32.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
+  } else if (
+    (botao13.textContent.includes("X") &&
+      botao23.textContent.includes("X") &&
+      botao33.textContent.includes("X")) ||
+    (botao13.textContent.includes("O") &&
+      botao23.textContent.includes("O") &&
+      botao33.textContent.includes("O"))
+  ) {
+    if (currentPlayer === "X") {
+      desativaBotoes();
+    } else {
+      desativaBotoes();
+    }
   }
+}
+
+function reset() {
+  location.reload();
 }
 
 while (contador < buttons.length) {
   const botao = document.getElementById(buttons[contador]);
+
   botao.addEventListener("click", function () {
     botao.disabled = true;
     if (currentPlayer === "X") {
       botao.innerText = "X";
       currentPlayer = "O";
+      statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
+      checkWinner();
     } else {
       botao.innerText = "O";
       currentPlayer = "X";
+      statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
+      checkWinner();
     }
-    statusDisplay.innerHTML = `É a vez do jogador : ${currentPlayer}`;
+    
   });
   contador = contador + 1;
-  
 }
